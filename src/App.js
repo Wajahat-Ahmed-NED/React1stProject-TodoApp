@@ -6,17 +6,18 @@ function App() {
   let [addTodo,setTodo]=useState([])
   let [inpVal,setVal]=useState('')
   let handleAdd=()=>{
-    // setTodo=([...addTodo,inpVal])
-    addTodo.push(inpVal)
-    console.log("Handle Add run")
-    console.log(inpVal)
-    console.log(addTodo)
+    setTodo([...addTodo,inpVal])
+    // //addTodo.push(inpVal)
+    // console.log("Handle Add run")
+    // console.log(inpVal)
+    // console.log([...addTodo,inpVal])
+    // console.log(addTodo)
 
   }
   const handleChange=(e)=>{
     setVal(e.target.value)
-    console.log("Handle change run")
-    console.log(e.target.value)
+    // console.log("Handle change run")
+    // console.log(inpVal)
     
 
   }
@@ -24,6 +25,7 @@ function App() {
 
   const handleDel=(index)=>{
     addTodo.splice(index,1)
+    setTodo([...addTodo])
     console.log(index)
     console.log('handle del chal gaya')
   }
@@ -37,7 +39,7 @@ function App() {
     inpVal=prompt("Enter the value")
     console.log(index)
     addTodo.splice(index,1,inpVal)
-
+    setTodo([...addTodo])
     console.log('handle Edit chal gaya')
   }
   return (
