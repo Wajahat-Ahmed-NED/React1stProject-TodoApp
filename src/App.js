@@ -26,33 +26,36 @@ function App() {
   const handleDel=(index)=>{
     addTodo.splice(index,1)
     setTodo([...addTodo])
-    console.log(index)
-    console.log('handle del chal gaya')
+    // console.log(index)
+    // console.log('handle del chal gaya')
   }
   
   const handelDelAll=()=>{
     setTodo([])
-    console.log('handle del ALL chal gaya')
+    // console.log('handle del ALL chal gaya')
   }
   
   const handleEdit=(index)=>{
     inpVal=prompt("Enter the value")
-    console.log(index)
     addTodo.splice(index,1,inpVal)
     setTodo([...addTodo])
-    console.log('handle Edit chal gaya')
+    // console.log(index)
+    // console.log('handle Edit chal gaya')
   }
   return (
     <div className="App">
       <h1>React ToDo App </h1>
       <input value={inpVal} onChange={handleChange} placeholder="Write your task" type="text" />
-      <button onClick={handleAdd}>Add</button><br />
-     
+      <button className="btn green" onClick={handleAdd}>Add</button><br />
+      <ul>
         {
-          addTodo.map((val,index)=>{return <p key={index}>{val} <button onClick={()=>handleDel(index)} className="btn">Delete</button>&nbsp;&nbsp;<button onClick={()=>handleEdit(index)} className="btn">Edit</button></p>})
+          addTodo.map((val,index)=>{return <p key={index}>{index+1}) {val} <button onClick={()=>handleDel(index)} className="btn">Delete</button>&nbsp;&nbsp;<button onClick={()=>handleEdit(index)} className="btn  green">Edit</button></p>})
         }
-     
-        <button onClick={handelDelAll}>Delete All</button>
+     </ul>
+        <button id="long" className="btn" onClick={handelDelAll}>Delete All</button>
+        <div>
+        <marquee behavior="scroll" direction="left">A Project Of Jawan Pakistan</marquee>
+        </div>
     </div>
   );
 }

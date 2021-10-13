@@ -1,3 +1,19 @@
+*{
+  
+  font-family:cursive;
+  padding: 0px;
+}
+h1{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 3em;
+  color:greenyellow ;
+  text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+  /* text-shadow: 0 0 3px #FF0000; */
+}
+body{
+  background-color:rgb(252, 252, 189);
+  overflow: auto;
+}
 .App {
   text-align: center;
 }
@@ -35,4 +51,61 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.btn{
+
+  color: yellow;
+  font-size: large;
+  background-color: black;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 8px;
+  border: 2px solid red;
+  width: 70px;
+  height: 40px;
+}
+.btn:hover{
+  color:red;
+  background-color: white;
+  /* box-shadow:black; */
+}
+.green{
+border: 2px solid green;}
+.green:hover{
+  border: 2px solid green;color:green
+}
+#long{
+  width: 300px;
+}
+input{
+  width: 200px;
+  height: 30px;
+  font-size: large;
+  border-radius: 8px;
+  padding: 3px;
+  text-indent:0.5em;
+}
+p{
+  font-size: large;
+  padding: 3px !important;
+  /* border: 2px solid black; */
+  /* text-align: left; */
+  /* text-decoration: lime; */
+  font-weight: bold;
+  background-color:cornsilk;
+  /* background-color:cornsilk; */
+  border-radius: 18px;
+  /* width:700px ; */
+  
+}
+
+marquee{
+  margin: 5px;
+  color: green;
+  font-weight: bold;
+  font-size: 2em;
+  
+  /* text-align: center; */
+ 
 }
