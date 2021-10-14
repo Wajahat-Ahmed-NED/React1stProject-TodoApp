@@ -73,7 +73,8 @@ body{
 .green{
 border: 2px solid green;}
 .green:hover{
-  border: 2px solid green;color:green
+  border: 2px solid green;
+  color:green
 }
 #long{
   width: 300px;

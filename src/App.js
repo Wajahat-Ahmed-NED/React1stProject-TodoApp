@@ -6,7 +6,9 @@ function App() {
   let [addTodo,setTodo]=useState([])
   let [inpVal,setVal]=useState('')
   let handleAdd=()=>{
+    if(inpVal!=""){
     setTodo([...addTodo,inpVal])
+    }
     // //addTodo.push(inpVal)
     // console.log("Handle Add run")
     // console.log(inpVal)
@@ -36,9 +38,11 @@ function App() {
   }
   
   const handleEdit=(index)=>{
-    inpVal=prompt("Enter the value")
-    addTodo.splice(index,1,inpVal)
+    const inp1=prompt("Enter the value")
+    if(inp1!=null){
+    addTodo.splice(index,1,inp1)
     setTodo([...addTodo])
+    }
     // console.log(index)
     // console.log('handle Edit chal gaya')
   }
