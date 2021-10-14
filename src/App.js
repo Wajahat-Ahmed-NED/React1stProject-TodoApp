@@ -1,13 +1,23 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import {useState} from 'react';
+// import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
+
 
 function App() {
+  const searchInput = useRef(null);
+
   let [addTodo,setTodo]=useState([])
   let [inpVal,setVal]=useState('')
-  let handleAdd=()=>{
+  let handleAdd=(e)=>{
     if(inpVal!=""){
     setTodo([...addTodo,inpVal])
+      setVal('')
+      searchInput.current.focus()
+      // handleChange(e)
+    
+    
     }
     // //addTodo.push(inpVal)
     // console.log("Handle Add run")
@@ -20,6 +30,7 @@ function App() {
     setVal(e.target.value)
     // console.log("Handle change run")
     // console.log(inpVal)
+    
     
 
   }
@@ -49,7 +60,7 @@ function App() {
   return (
     <div className="App">
       <h1>React ToDo App </h1>
-      <input value={inpVal} onChange={handleChange} placeholder="Write your task" type="text" />
+      <input value={inpVal}  ref={searchInput} onChange={handleChange} placeholder="Write your task" type="text" />
       <button className="btn green" onClick={handleAdd}>Add</button><br />
       <ul>
         {
@@ -58,8 +69,10 @@ function App() {
      </ul>
         <button id="long" className="btn" onClick={handelDelAll}>Delete All</button>
         <div>
-        <marquee behavior="scroll" direction="left">A Project Of Jawan Pakistan</marquee>
+        <h2 >A Project Of Jawan Pakistan</h2>
         </div>
+        {/* <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button> */}
+        <button id="btn"><a href="#top">Top</a></button>
     </div>
   );
 }
